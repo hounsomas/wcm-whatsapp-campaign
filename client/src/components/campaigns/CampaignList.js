@@ -5,7 +5,6 @@ import toast from 'react-hot-toast';
 import { 
   Plus, 
   Search, 
-  Filter, 
   MoreVertical,
   Play,
   Clock,

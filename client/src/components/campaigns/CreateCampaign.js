@@ -9,7 +9,6 @@ import toast from 'react-hot-toast';
 import { 
   Upload, 
   X, 
-  MessageCircle, 
   Image, 
   Video, 
   FileText,
@@ -97,7 +96,7 @@ const CreateCampaign = () => {
         formData.append('scheduled_time', scheduledDate.toISOString());
       }
 
-      const response = await axios.post('/api/campaigns', formData, {
+      await axios.post('/api/campaigns', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

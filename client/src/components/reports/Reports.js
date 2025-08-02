@@ -21,10 +21,7 @@ import {
   Users, 
   CheckCircle, 
   XCircle, 
-  Clock,
-  Calendar,
-  Download,
-  Filter
+  Download
 } from 'lucide-react';
 
 const Reports = () => {

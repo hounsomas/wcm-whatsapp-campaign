@@ -7,9 +7,7 @@ import {
   CheckCircle, 
   XCircle, 
   Clock,
-  TrendingUp,
-  Plus,
-  BarChart3
+  Plus
 } from 'lucide-react';
 import { PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 

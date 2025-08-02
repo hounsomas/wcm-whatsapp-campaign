@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -10,7 +10,6 @@ import {
   XCircle, 
   Users,
   MessageCircle,
-  Calendar,
   FileText,
   Image,
   Video,
@@ -23,11 +22,7 @@ const CampaignDetail = () => {
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
 
-  useEffect(() => {
-    fetchCampaign();
-  }, [id]);
-
-  const fetchCampaign = async () => {
+  const fetchCampaign = useCallback(async () => {
     try {
       const response = await axios.get(`/api/campaigns/${id}`);
       setCampaign(response.data);
@@ -37,7 +32,13 @@ const CampaignDetail = () => {
       toast.error('Erreur lors du chargement de la campagne');
       setLoading(false);
     }
-  };
+  }, [id]);
+
+  useEffect(() => {
+    fetchCampaign();
+  }, [fetchCampaign]);
+
+
 
   const handleSendCampaign = async () => {
     setSending(true);
