@@ -17,7 +17,7 @@ import Layout from './components/layout/Layout';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 // Configuration axios
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:5001' : '/api');
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || (window.location.hostname === 'localhost' ? 'http://localhost:5001' : 'https://api.vercel.app');
 
 // Composant de protection des routes
 const ProtectedRoute = ({ children }) => {
